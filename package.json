@@ -1,0 +1,33 @@
+{
+  "name": "generator-phaser-alt",
+  "version": "1.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "https://github.com/ikkewa/generator-phaser-alt",
+  "author": {
+    "name": "IkkeWa",
+    "email": "xikkewa@gmail.com",
+    "url": "https://github.com/ikkewa"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "phaser",
+    "phaserjs"
+  ],
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.19.0",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
