@@ -7,7 +7,7 @@ var runSequence = require('run-sequence');
  * The build task runs a series of task to generate
  * a new build from the sources.
  */
-gulp.task('build', ['clean', 'jshint'], function(cb) {
+gulp.task('build', ['cache-clear', 'clean', 'jshint'], function(cb) {
   runSequence(
     'browserify',
     'copyjs',
