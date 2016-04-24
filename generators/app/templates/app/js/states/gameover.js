@@ -1,16 +1,12 @@
 'use strict';
 
-function GameOver() {
-  this.textIndex = 0;
-  this.line = '';
-}
+class GameOver extends Phaser.State {
+  preload() {
+    this.textIndex = 0;
+    this.line = '';
+  }
 
-GameOver.prototype = {
-  preload: function preload() {
-    // empty
-  },
-
-  create: function create() {
+  create() {
     // create game over screen
 
     // example for gameover
@@ -24,12 +20,12 @@ GameOver.prototype = {
     text.strokeThickness = 16;
     text.setShadow(2, 2, '#333333', 2, false, true);
     text.events.onInputDown.add(this.onClick, this);
-  },
+  }
 
-  onClick: function onClick() {
+  onClick() {
     this.game.state.start('menu');
   }
-};
+}
 
 
-module.exports = GameOver;
+export default GameOver;

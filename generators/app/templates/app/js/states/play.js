@@ -5,19 +5,14 @@
 /**
  * Play state - the actual game
  */
-function Play() {
-  // define game relevant constants or Phaser.Group's
-  // with `this` binding here
-}
-
-Play.prototype = {
+class Play extends Phaser.State {
   /**
    * Preload the game
    *
    * This is for overall keybinding and debugging.
    * Nothing really fancy happens here
    */
-  preload: function preload() {
+  preload() {
     // prevent window jumping, by binding the keys that
     // trigger the browser to scroll
     this.input.keyboard.addKeyCapture([
@@ -42,14 +37,14 @@ Play.prototype = {
     // enable advance (precission) timing
     this.game.time.advancedTiming = true;
 
-  },
+  }
 
   /**
    * Create the game instance that makes a 
    * level playable. Constructs the entities and
    * the basic logic that is needed
    */
-  create: function create() {
+  create() {
     // load a tilemap or create some level here from assets
     // example tilemap:
     //  this.tileMap = this.add.tilemap('cache-key-tilemap');
@@ -70,7 +65,7 @@ Play.prototype = {
     // example: bind esc key to get to gameover screen
     this.escKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ESC);
     this.escKey.onDown.add(this.onEscKeyPressed, this);
-  },
+  }
 
   /**
    * Update function - called on every frame
@@ -84,19 +79,19 @@ Play.prototype = {
    * maybe by using state checks and if it is needed to update
    * any logic.
    */
-  update: function update() {
+  update() {
     // check physics, move player position etc ...
 
     this.demoImage.angle += 1;
-  },
+  }
 
   /**
    * Render function, mostly used for debugging
    */
-  render: function render() {
+  render() {
     // example: debug a sprite object when physics are enabled
     //  this.game.debug.body(this.player);
-  },
+  }
 
   /**
    * Callback function, when the ESC key is pressed.
@@ -104,12 +99,12 @@ Play.prototype = {
    *
    * @param {Phaser.Key} key
    */
-  onEscKeyPressed: function onEscKeyPressed(key) {
+  onEscKeyPressed(key) {
     if(key.keyCode === Phaser.Keyboard.ESC) {
       this.game.state.start('gameover');
     }
-  },
-};
+  }
+}
 
-module.exports = Play;
+export default Play;
 

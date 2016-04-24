@@ -6,20 +6,16 @@
  * Bring up all base settings for the phaser framework
  * and setup the next preload state.
  */
-function Boot() {
-  // empty, maybe inherit config file or something
-}
-
-Boot.prototype = {
+class Boot extends Phaser.State {
   /**
    * Boot preload
    *
    * Load the images used in the preload state
    */
-  preload: function preload() {
+  preload() {
     this.load.image('preload-bg', 'assets/images/preloader_bg.png');
     this.load.image('preload-fg', 'assets/images/preloader_fg.png');
-  },
+  }
 
   /**
    * Create the boot state
@@ -27,7 +23,7 @@ Boot.prototype = {
    * Setup the game settings for phaser framework
    * and kick off the preload state
    */
-  create: function create() {
+  create() {
     this.scale.windowConstraints.bottom = 'visual';
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     this.scale.pageAlignHorizontally = true;
@@ -37,6 +33,6 @@ Boot.prototype = {
 
     this.game.state.start('preload');
   }
-};
+}
 
-module.exports = Boot;
+export default Boot;

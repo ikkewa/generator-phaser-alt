@@ -1,18 +1,18 @@
 'use strict';
 
-var bootState = require('./states/boot');
-var preloadState = require('./states/preload');
-var menuState = require('./states/menu');
-var playState = require('./states/play');
-var gameoverState = require('./states/gameover');
+import Boot from './states/boot';
+import Preload from './states/preload';
+import Menu from './states/menu';
+import Play from './states/play';
+import GameOver from './states/gameover';
 
 var game = new Phaser.Game(960, 640, Phaser.AUTO, 'gamecanvas');
 
-game.state.add('boot', bootState);
-game.state.add('preload', preloadState);
-game.state.add('menu', menuState);
-game.state.add('play', playState);
-game.state.add('gameover', gameoverState);
+game.state.add('boot', Boot);
+game.state.add('preload', Preload);
+game.state.add('menu', Menu);
+game.state.add('play', Play);
+game.state.add('gameover', GameOver);
 
 // boot the game directly
 game.state.start('boot');

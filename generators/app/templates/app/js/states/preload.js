@@ -6,11 +6,7 @@
  * Preloader for the game to load all kind of
  * assets and lastly start the menu state
  */
-function Preload() {
-  // empty
-}
-
-Preload.prototype = {
+class Preload extends Phaser.State {
   /**
    * Preload the preload state
    *
@@ -20,7 +16,7 @@ Preload.prototype = {
    * The visually indicate for the use the loading,
    * setup the preloadSprite system.
    */
-  preload: function preload() {
+  preload() {
     var cx = this.game.width / 2;
     var cy = this.game.height / 2;
 
@@ -49,7 +45,7 @@ Preload.prototype = {
     // load the audio for the menu
     this.load.audio('audio-menu-tick', 'assets/audio/menu-tick.mp3');
     this.load.audio('audio-menu-select', 'assets/audio/menu-select.mp3');
-  },
+  }
 
   /**
    * Create the preload state
@@ -58,9 +54,9 @@ Preload.prototype = {
    * of assets has been done and we can jump over
    * to the `play` state.
    */
-  create: function create() {
+  create() {
     this.state.start('menu');
   }
-};
+}
 
-module.exports = Preload;
+export default Preload;

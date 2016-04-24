@@ -6,11 +6,7 @@
  * Give the user some intro, options and then
  * start the game on user interaction.
  */
-function Menu() {
-  // empty
-}
-
-Menu.prototype = {
+class Menu extends Phaser.State {
   /**
    * Preload state of Menu
    *
@@ -19,7 +15,7 @@ Menu.prototype = {
    * and here we just pull the assets from the cache via
    * the cache-key.
    */
-  preload: function preload() {
+  preload() {
     // load sound for mouseover and click
     this.audioTick = this.add.audio('audio-menu-tick');
     this.audioSelect = this.add.audio('audio-menu-select');
@@ -37,14 +33,14 @@ Menu.prototype = {
 
     this.btnPlay.onOverSound = this.audioTick;
     this.btnPlay.onDownSound = this.audioSelect;
-  },
+  }
 
   /**
    * Callback called when clicked on play button
    */
-  onPlayClick: function onPlayClick() {
+  onPlayClick() {
     this.game.state.start('play');
   }
-};
+}
 
-module.exports = Menu;
+export default Menu;
