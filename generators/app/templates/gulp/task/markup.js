@@ -14,8 +14,6 @@ var config = require('../config').markup;
  * up by the `useref` plugin
  */
 gulp.task('markup', function() {
-  var assets = useref.assets();
-
   return gulp
     .src(config.srcPath)
     .pipe(jade({
