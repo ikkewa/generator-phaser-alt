@@ -1,4 +1,3 @@
-
 var gulp = require('gulp');
 var browserify = require('browserify');
 var watchify = require('watchify');
@@ -27,7 +26,12 @@ gulp.task('browserify', function() {
 
   var bundle = function() {
     return bundler
+      .transform("babelify", {presets: ["es2015"]})
       .bundle()
+      .on('error', function(err) {
+        console.error('[ERROR]', err.message);
+        this.emit('end');
+      })
       .pipe(source('build.js'))
       .pipe(buffer())
       .pipe(gulpif(global.isDeployment, uglify()))
