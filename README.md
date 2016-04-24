@@ -1,5 +1,15 @@
 # generator-phaser-alt
 
+## Version notice
+
+### Version 1.x
+Version 1.x was developed to use ES5 (< ES2015), so standard JavaScript.
+
+### Version 2.x
+Version 2.x is an enhancement of v1.x that uses BabelJS to get ES6 support. Now you can use
+`class`, `import`, `let` and so on in your code. Should also run ES5 Code, so no need to use
+v1.x just to get ES5 compability.
+
 ## Getting Started
 
 ### What is Generator-Phaser-Alternative?
@@ -73,6 +83,7 @@ my needs, thats why I created my own generator.
 - [Gulp](http://www.gulpjs.com) as task runner
 - [Browserify](http://browserify.org/) to bundle your code
 - [JSHint](http://jshint.com/) to help your with your code
+- [BabelJS](https://babeljs.io/) to get ES6 support
 - Gulp Tasks to
   - copy audio/image assets
   - copy other js files that you want on your website or for the game
@@ -134,7 +145,7 @@ via `devreload.js` file. On every change (save of file) this will run. If puttin
 
 ## TODO
 
-There are some things that need to be fine tuned, at the moment I did not discover any real TODOs.
+Bug Fixing
 
 ## License
 
